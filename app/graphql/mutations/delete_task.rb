@@ -1,14 +1,18 @@
 module Mutations
   class DeleteTask < GraphQL::Schema::RelayClassicMutation
-    # TODO: define return fields
-    # field :post, Types::PostType, null: false
+    graphql_name 'DeleteTask'
 
-    # TODO: define arguments
-    # argument :name, String, required: true
+    field :task, Types::TaskType, null: true
+    field :result, Boolean, null: true
 
-    # TODO: define resolve method
-    # def resolve(name:)
-    #   { post: ... }
-    # end
+    argument :id, ID, required: true
+
+    def resolve(**args)
+      task = Task.find(args[:id])
+      task.destroy
+      {
+        task: task
+      }
+    end
   end
 end

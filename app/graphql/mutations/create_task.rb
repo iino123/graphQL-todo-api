@@ -1,14 +1,23 @@
 module Mutations
   class CreateTask < GraphQL::Schema::RelayClassicMutation
-    # TODO: define return fields
-    # field :post, Types::PostType, null: false
+    graphql_name 'CreateTask'
 
-    # TODO: define arguments
-    # argument :name, String, required: true
+    field :task, Types::TaskType, null: true
+    field :result, Boolean, null: true
 
-    # TODO: define resolve method
-    # def resolve(name:)
-    #   { post: ... }
-    # end
+    argument :title, String, required: false
+    argument :description, String, required: false
+
+    def resolve(**args)
+      task = Task.create(
+        title: args[:title],
+        description: args[:description],
+        completed: false
+      )
+      {
+        task: task,
+        result: task.errors.blank?
+      }
+    end
   end
 end
