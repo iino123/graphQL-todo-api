@@ -12,7 +12,10 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
+
+# NOTE: 開発環境で/graphqlにアクセスする為には下記を有効にする必要がある。
+require "sprockets/railtie"
+
 require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
