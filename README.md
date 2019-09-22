@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+railsとgraphQL製TODOアプリAPI  
 
-Things you may want to cover:
+参考記事：  
+> https://tech.fusic.co.jp/posts/2019-08-23-rails-nuxt-graphql-todoapp/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+フロントエンド:  
+https://github.com/iino123/graphql-todo-client-nuxt-app
